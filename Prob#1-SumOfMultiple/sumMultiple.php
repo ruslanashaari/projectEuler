@@ -1,23 +1,14 @@
 <?php
 
-function sumofMultiple($x, $y, $limit){
+function sumofMultiple($x, $y, $limit, $sum=0){
 
-	$multiplesX = listingArray($x, $limit);
-	$multiplesY = listingArray($y, $limit);
-
-	$multiplesXandY = array_unique(array_merge($multiplesX, $multiplesY));
-
-	return array_sum($multiplesXandY);
-}
-
-function listingArray($param, $limit){
-	$constantParam = $param;
-	$arrayofparam = [];
-
-	while ($param < $limit) {
-		array_push($arrayofparam, $param);
-		$param = $param + $constantParam;
+	for ($i=1;$i<$limit;$i++) {
+	  
+	  if ($i%$x==0 || $i%$y==0)
+	  	$sum = $sum+$i;
+	
 	}
 
-	return $arrayofparam;
+	return $sum;
+
 }
