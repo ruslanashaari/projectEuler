@@ -2,16 +2,14 @@
 
 function sumEvenFibonacci($limit){
 
-	$current = $temp1 = 1;
+	$temp1 = 1;
 	$temp2 = 0;
 	$sum = 0;
 
-	while ($current <= $limit) {
-
+	for($current = 1; $current <= $limit; $current += $temp2){
 		if ($current%2 == 0) 
-			$sum = $sum + $current;
+			$sum += $current;
 
-		$current = $current + $temp2; 
 		$temp2 = $temp1; 
 		$temp1 = $current; 
 	}
