@@ -2,20 +2,17 @@
 
 function largestprimefactor($number) {
 	
-	$x = $number;
 	$largestprimefactor = 0;
 
-	while ($x>0) {
-		for ($i=1; $i<=$number; $i++) { 
-			if ($i%2==0 && $x%2==0) {
-				if ($i>$x && $i>$largestprimefactor) {
-					$largestprimefactor = $i;
-				} elseif ($x>$i && $x>$largestprimefactor) {
-					$largestprimefactor = $x;
-				}
+	for ($x=2; $x<$number; $x++) {
+		if ($number%$x == 0) { //is x is the factor of number
+			for ($y=2; $y<$x; $y++) { 
+				if ($x%$y != 0) //is x is a prime number
+					break;
+				else
+					$largestprimefactor = $x;					
 			}
-
-			$x--;
+			
 		}
 	}
 
