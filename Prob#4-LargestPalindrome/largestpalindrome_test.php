@@ -7,7 +7,7 @@ class palindrome extends PHPUnit\Framework\TestCase {
 		$this->assertEquals(9009, largestpalindrome(2));	
 	}
 
-	// public function testfindinglargestpalindromefromproductoftwo3digitnumbers(){
-	// 	$this->assertEquals(9009, largestpalindrome(3));	
-	// }
+	public function testfindinglargestpalindromefromproductoftwo3digitnumbers(){
+		$this->assertEquals(906609, largestpalindrome(3));	
+	}
 }
