@@ -1,15 +1,17 @@
 <?php
 
 function largestpalindrome($digit) {
-	for ($i=99; $i>9; $i--) { 
-		for ($j=99; $j<9; $j--) {
-			if (isPalindrome($i*$j)) {
-				break;
+	$largestpalin = 0;
+
+	for ($i=999; $i>100; $i--) { 
+		for ($j=999; $j>100; $j--) {
+			if (isPalindrome($i*$j) && $i*$j > $largestpalin) {
+				$largestpalin = $i*$j;
 			}
 		}
 	}
 
-	return $i." ".$j;
+	return $largestpalin;
 }
 
 function isPalindrome($number, $reverse = 0, $div = 0) {
