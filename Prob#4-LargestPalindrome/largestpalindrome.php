@@ -1,28 +1,28 @@
 <?php
 
-function palindrome($digit, $i=0, $maxi=1) {
+function palindrome($digit, $i=0) {
+	$time_start = microtime(true);
 
 	for ($x=0; $x<$digit; $x++) { 
 		$i = $i.'9';
-		$maxi = $maxi.'0';
 	}
 
-	$i = (int) $i;
-	$maxi = (int) $maxi / 10 -1;
-
-	return largestpalindrome($i, $maxi);
+	return largestpalindrome((int) $i);
 }
 
-function largestpalindrome($i, $maxi) {
+function largestpalindrome($i) {
 	
 	$largestpalin = 0;
 	$j = $i;
-	$maxj = $maxi;
+	$min = $i/9;
 
-	for ($k=$i; $k>$maxi; $k--) { 
-		for ($l=$j; $l>$maxj; $l--) {
-			if (isPalindrome($k*$l) && $k*$l > $largestpalin) {
-				$largestpalin = $k*$l;
+	for ($k=$i; $k>$min; $k--) { 
+		for ($l=$j; $l>$min; $l--) {
+			$product = $k*$l;
+			if (isPalindrome($product)) {
+				if ($product > $largestpalin) {
+					$largestpalin = $product;
+				}
 			}
 		}
 	}
@@ -41,3 +41,5 @@ function isPalindrome($number, $reverse = 0, $div = 0) {
 
 	return ($reverse == $n ? true : false);
 }
+
+//need refactor
