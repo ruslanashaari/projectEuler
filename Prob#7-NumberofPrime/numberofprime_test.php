@@ -41,8 +41,8 @@
 		}
 
 		public function testfind10001stofprime() {
-			$this->markTestSkipped();
+			// $this->markTestSkipped();
 			$prime = new NumberOfPrime(10001);
-			$this->assertEquals(13, $prime->numberofprime(10001));
+			$this->assertEquals(104743, $prime->numberofprime(10001));
 		}
 	}
