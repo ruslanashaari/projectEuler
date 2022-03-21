@@ -5,27 +5,33 @@ require 'summationOfPrimes.php';
 class summationOfPrimesTest extends PHPUnit\Framework\Testcase {
 	
 	public function testSumUnder10(){
-		$this->assertEquals(17, handle(10));
+		$sumOfPrime = new summationOfPrimes();
+		$this->assertEquals(17, $sumOfPrime->handle(10));
 	} 
 
 	public function testSumUnder20(){
-		$this->assertEquals(77, handle(20));
+		$sumOfPrime = new summationOfPrimes();
+		$this->assertEquals(77, $sumOfPrime->handle(20));
 	} 
 
 	public function testSumUnder30(){
-		$this->assertEquals(129, handle(30));
+		$sumOfPrime = new summationOfPrimes();
+		$this->assertEquals(129, $sumOfPrime->handle(30));
 	} 
 
 	public function testSumUnder40(){
-		$this->assertEquals(197, handle(40));
+		$sumOfPrime = new summationOfPrimes();
+		$this->assertEquals(197, $sumOfPrime->handle(40));
 	} 
 
 	public function testSumUnder50(){
-		$this->assertEquals(328, handle(50));
+		$sumOfPrime = new summationOfPrimes();
+		$this->assertEquals(328, $sumOfPrime->handle(50));
 	} 
 
 	public function testSumUnder2M(){
-		$this->assertEquals(1, handle(2000000));
+		$sumOfPrime = new summationOfPrimes();
+		$this->assertEquals(142913828922, $sumOfPrime->handle(2000000));
 	}
 
 }
